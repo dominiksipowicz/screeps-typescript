@@ -1,5 +1,6 @@
 export class RoleHarvester {
-  public run(creep: Creep) {
+
+  public static run(creep: Creep) {
 
     if (creep.carry.energy < creep.carryCapacity) {
       const sources = creep.room.find(FIND_SOURCES);
@@ -18,6 +19,6 @@ export class RoleHarvester {
         creep.moveTo(targets[0], {visualizePathStyle: {stroke: "#ffffff"}});
       }
     }
-
   }
+
 }
