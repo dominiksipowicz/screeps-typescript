@@ -13,10 +13,6 @@ export class CreepController {
             this.createCreep(CREEP_ROLE.upgrader);
         } else if (builders.length < 3) {
             this.createCreep(CREEP_ROLE.builder);
-        } else if (harvesters.length < 5) {
-            this.createCreep(CREEP_ROLE.harvester);
-        } else if (upgraders.length < 4) {
-            this.createCreep(CREEP_ROLE.upgrader);
         }
     }
 
@@ -34,9 +30,9 @@ export class CreepController {
     public createCreep(type: CREEP_ROLE) {
         const newName = type + Game.time;
         console.log("Spawning new " + type + ": " + newName);
-        Game.spawns.Spawn1.spawnCreep([ WORK, CARRY, MOVE ], newName,
+        Game.spawns.Spawn1.spawnCreep([ WORK, CARRY, CARRY, MOVE, MOVE ],
+            newName,
             {memory: {role: type}});
     }
-
 
 }
