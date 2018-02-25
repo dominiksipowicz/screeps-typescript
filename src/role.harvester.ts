@@ -1,3 +1,5 @@
+import {RoleBuilder} from "./role.builder";
+
 export class RoleHarvester {
 
   public static run(creep: Creep) {
@@ -17,6 +19,8 @@ export class RoleHarvester {
       });
       if (targets.length > 0 && creep.transfer(targets[0], RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
         creep.moveTo(targets[0], {visualizePathStyle: {stroke: "#ffffff"}});
+      } else { // if it's idle change role to builder
+        RoleBuilder.run(creep);
       }
     }
   }

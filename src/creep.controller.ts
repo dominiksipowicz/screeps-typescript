@@ -10,9 +10,9 @@ export class CreepController {
 
         if (this.harvesters.length < 3) {
             this.createCreep(CREEP_ROLE.harvester);
-        } else if (this.upgraders.length < 3) {
+        } else if (this.upgraders.length < 4) {
             this.createCreep(CREEP_ROLE.upgrader);
-        } else if (this.builders.length < 3) {
+        } else if (this.builders.length < 4) {
             this.createCreep(CREEP_ROLE.builder);
         }
     }
@@ -34,6 +34,12 @@ export class CreepController {
         this.Spawn.spawnCreep([ WORK, CARRY, CARRY, MOVE, MOVE ],
             newName,
             {memory: {role: type}});
+    }
+
+    public checkHarvestingStatus(): void {
+      if (this.Spawn.room.energyAvailable === this.Spawn.room.energyCapacityAvailable) {
+        console.log(`Harvesters changing to builders`);
+      }
     }
 
 }
