@@ -34,3 +34,13 @@ to push code to the server:
 ```bash
 rollup -c --dest main
 ```
+
+
+## TODO
+
+ - [ ] when nothing to build change to upgreade
+ - [ ] save paths to memory for each creep (watch out for colisions)
+ - [ ] build road for creeps paths or check position each time and build road
+ - [ ] build extension around Spawn
+ - [ ] do logic for building order
+ 

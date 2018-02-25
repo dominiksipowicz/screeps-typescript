@@ -38,7 +38,7 @@ export class CreepController {
 
     public checkHarvestingStatus(): void {
       if (this.Spawn.room.energyAvailable === this.Spawn.room.energyCapacityAvailable) {
-        console.log(`Harvesters changing to builders`);
+        console.log(`Harvesters changing to builders. Energy Avaiable: ${this.Spawn.room.energyAvailable} `);
       }
     }
 
